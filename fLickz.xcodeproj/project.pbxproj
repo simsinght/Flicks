@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		232E726B1E4886C9005AC053 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232E726A1E4886C9005AC053 /* MovieCell.swift */; };
+		232E726F1E48A4AE005AC053 /* alert.png in Resources */ = {isa = PBXBuildFile; fileRef = 232E726E1E48A4AE005AC053 /* alert.png */; };
 		2397CD361E4866D400E3C696 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2397CD351E4866D400E3C696 /* AppDelegate.swift */; };
 		2397CD3B1E4866D400E3C696 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2397CD391E4866D400E3C696 /* Main.storyboard */; };
 		2397CD3D1E4866D400E3C696 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2397CD3C1E4866D400E3C696 /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		232E726A1E4886C9005AC053 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
+		232E726E1E48A4AE005AC053 /* alert.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = alert.png; path = ../../../../../Downloads/alert.png; sourceTree = "<group>"; };
 		2397CD321E4866D400E3C696 /* fLickz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fLickz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2397CD351E4866D400E3C696 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2397CD3A1E4866D400E3C696 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -58,6 +60,14 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
+		232E726D1E48A46B005AC053 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				232E726E1E48A4AE005AC053 /* alert.png */,
+			);
+			name = images;
+			sourceTree = "<group>";
+		};
 		2397CD291E4866D400E3C696 = {
 			isa = PBXGroup;
 			children = (
@@ -79,6 +89,7 @@
 		2397CD341E4866D400E3C696 /* fLickz */ = {
 			isa = PBXGroup;
 			children = (
+				232E726D1E48A46B005AC053 /* images */,
 				232E726C1E4886D5005AC053 /* ViewControllers */,
 				232E72691E488687005AC053 /* Views */,
 				2397CD351E4866D400E3C696 /* AppDelegate.swift */,
@@ -170,6 +181,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				232E726F1E48A4AE005AC053 /* alert.png in Resources */,
 				2397CD401E4866D400E3C696 /* LaunchScreen.storyboard in Resources */,
 				2397CD3D1E4866D400E3C696 /* Assets.xcassets in Resources */,
 				2397CD3B1E4866D400E3C696 /* Main.storyboard in Resources */,

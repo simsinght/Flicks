@@ -14,48 +14,31 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var errorView: UIView!
+    
+    var refreshControl: UIRefreshControl?
     
     var movies: [NSDictionary]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // hide and resize error message initially
+        errorView.isHidden = true
+        errorView.frame =  CGRect(x: 0, y: 0, width: 0, height: 0)
+        tableView.isHidden = false
+        
+        
+        // Initialize a UIRefreshControl
+        refreshControl = UIRefreshControl()
+        refreshControl?.addTarget(self, action: #selector(refreshControlAction(refreshControl:)), for: UIControlEvents.valueChanged)
+        tableView.insertSubview(refreshControl!, at: 0)
+        
         tableView.dataSource = self
         tableView.delegate = self
-
-        
-        
-        /* network request for movie data */
-        // url and fetch request
-        let apiKey = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
-        let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=\(apiKey)")!
-        let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
-        
-        //
-        let session = URLSession(
-            configuration: .default,
-            delegate: nil,
-            delegateQueue: OperationQueue.main)
-        
-        // Display HUD right before the request is made
-        MBProgressHUD.showAdded(to: self.view, animated: true)
-        
-        let task: URLSessionDataTask = session.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
-            if let data = data {
-                if let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary {
-                    
-                    // update the class global movie data
-                    self.movies = (dataDictionary["results"] as! [NSDictionary])
-                    // update the table
-                    self.tableView.reloadData()
-                    
-                    // Hide HUD once the network request comes back
-                    MBProgressHUD.hide(for: self.view, animated: true)
-                }
-            }
-        }
-        task.resume()
-        
+ 
+        loadDataFromNetwork( reload: false )
+        print ("finish loading")
     }
 
     override func didReceiveMemoryWarning() {
@@ -63,17 +46,101 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         // Dispose of any resources that can be recreated.
     }
     
+    
+    
+    /* function for database call */
+    func loadDataFromNetwork( reload: Bool) {
+        
+        // url and fetch request
+        let apiKey = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
+        let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=\(apiKey)")!
+        let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
+        
+        
+        let session = URLSession(
+            configuration: .default,
+            delegate: nil,
+            delegateQueue: OperationQueue.main)
+        
+        if (reload)  {
+            
+        } else {
+            // Display HUD right before the request is made
+            MBProgressHUD.showAdded(to: self.view, animated: true)
+        }
+        
+        let task: URLSessionDataTask = session.dataTask(with: request) { (data: Data?, response: URLResponse?, error: Error?) in
+            if let error = error {
+                // if there was an error
+                Thread.sleep(forTimeInterval: 2)
+                self.errorCall(error: error)
+            } else if let data = data {
+                if let dataDictionary = try! JSONSerialization.jsonObject(with: data, options: []) as? NSDictionary {
+                    
+                    // update the class global movie data
+                    self.movies = (dataDictionary["results"] as! [NSDictionary])
+                    // update the table
+                    self.tableView.reloadData()
+                    print("reloading")
+                    
+                    if (reload) {
+                        // Tell the refreshControl to stop spinning
+                        self.refreshControl?.endRefreshing()
+                    }
+                    else {
+                        // Hide HUD once the network request comes back
+                        MBProgressHUD.hide(for: self.view, animated: true)
+                    }
+                }
+            }
+        }
+        task.resume()
+    }
+    
+    // In case the network call fails
+    func errorCall(error: Error){
+        MBProgressHUD.hide(for: self.view, animated: true)
+        self.refreshControl?.endRefreshing()
+        errorView.isHidden = false
+        errorView.frame =  CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50)
+    }
+    
+    @IBAction func onErrorTap() {
+        MBProgressHUD.showAdded(to: self.view, animated: true)
+        loadDataFromNetwork(reload: true)
+        print("after")
+        MBProgressHUD.hide(for: self.view, animated: true)
+    }
+    
+    
+    // Makes a network request to get updated data
+    // Updates the tableView with the new data
+    // Hides the RefreshControl
+    func refreshControlAction(refreshControl: UIRefreshControl) {
+        loadDataFromNetwork(reload: true)
+    }
+    
+    
+    
+    /* functions for creating the cell */
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         if let movies = movies {
+            // idea that didn't pan out --- maybe
+            // hide and resize error message since network request succeeded
+            errorView.isHidden = true
+            errorView.frame =  CGRect(x: 0, y: 0, width: 0, height: 0)
+            tableView.isHidden = false
+            
             return movies.count
         } else {
+            // idea that didn't pan out
+            // tableView.isHidden = true
+            // errorView.isHidden = false
+            // errorView.frame =  CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: 50)
             return 0
         }
     }
-    
-    // Row display. Implementers should *always* try to reuse cells by setting each cell's reuseIdentifier and querying for available reusable cells with dequeueReusableCellWithIdentifier:
-    // Cell gets various attributes set automatically based on table (separators) and data source (accessory views, editing controls)
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
