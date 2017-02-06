@@ -7,21 +7,27 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		232E726B1E4886C9005AC053 /* MovieCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 232E726A1E4886C9005AC053 /* MovieCell.swift */; };
 		2397CD361E4866D400E3C696 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2397CD351E4866D400E3C696 /* AppDelegate.swift */; };
-		2397CD381E4866D400E3C696 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2397CD371E4866D400E3C696 /* ViewController.swift */; };
 		2397CD3B1E4866D400E3C696 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2397CD391E4866D400E3C696 /* Main.storyboard */; };
 		2397CD3D1E4866D400E3C696 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2397CD3C1E4866D400E3C696 /* Assets.xcassets */; };
 		2397CD401E4866D400E3C696 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2397CD3E1E4866D400E3C696 /* LaunchScreen.storyboard */; };
+		2397CD481E4867F600E3C696 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2397CD471E4867F600E3C696 /* MoviesViewController.swift */; };
+		CF8B9C4979E97CFABC4282C1 /* Pods_fLickz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 800F4E2EDC3F4D5CE9B60ADE /* Pods_fLickz.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		232E726A1E4886C9005AC053 /* MovieCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieCell.swift; sourceTree = "<group>"; };
 		2397CD321E4866D400E3C696 /* fLickz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fLickz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2397CD351E4866D400E3C696 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2397CD371E4866D400E3C696 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2397CD3A1E4866D400E3C696 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2397CD3C1E4866D400E3C696 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2397CD3F1E4866D400E3C696 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2397CD411E4866D400E3C696 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2397CD471E4867F600E3C696 /* MoviesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
+		800F4E2EDC3F4D5CE9B60ADE /* Pods_fLickz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fLickz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C6802EACDADEDB129BA5A449 /* Pods-fLickz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fLickz.release.xcconfig"; path = "Pods/Target Support Files/Pods-fLickz/Pods-fLickz.release.xcconfig"; sourceTree = "<group>"; };
+		C9BA64AC02071C79D831CF5D /* Pods-fLickz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fLickz.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fLickz/Pods-fLickz.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,17 +35,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CF8B9C4979E97CFABC4282C1 /* Pods_fLickz.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		232E72691E488687005AC053 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				232E726A1E4886C9005AC053 /* MovieCell.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		232E726C1E4886D5005AC053 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				2397CD471E4867F600E3C696 /* MoviesViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
 		2397CD291E4866D400E3C696 = {
 			isa = PBXGroup;
 			children = (
 				2397CD341E4866D400E3C696 /* fLickz */,
 				2397CD331E4866D400E3C696 /* Products */,
+				65E1C72D49CAD0F09446E7B0 /* Pods */,
+				658F593AE952AC4BE8C2790B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +79,32 @@
 		2397CD341E4866D400E3C696 /* fLickz */ = {
 			isa = PBXGroup;
 			children = (
+				232E726C1E4886D5005AC053 /* ViewControllers */,
+				232E72691E488687005AC053 /* Views */,
 				2397CD351E4866D400E3C696 /* AppDelegate.swift */,
-				2397CD371E4866D400E3C696 /* ViewController.swift */,
 				2397CD391E4866D400E3C696 /* Main.storyboard */,
 				2397CD3C1E4866D400E3C696 /* Assets.xcassets */,
 				2397CD3E1E4866D400E3C696 /* LaunchScreen.storyboard */,
 				2397CD411E4866D400E3C696 /* Info.plist */,
 			);
 			path = fLickz;
+			sourceTree = "<group>";
+		};
+		658F593AE952AC4BE8C2790B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				800F4E2EDC3F4D5CE9B60ADE /* Pods_fLickz.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		65E1C72D49CAD0F09446E7B0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C9BA64AC02071C79D831CF5D /* Pods-fLickz.debug.xcconfig */,
+				C6802EACDADEDB129BA5A449 /* Pods-fLickz.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +114,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2397CD441E4866D400E3C696 /* Build configuration list for PBXNativeTarget "fLickz" */;
 			buildPhases = (
+				6EE49458371D9397DD60BB42 /* [CP] Check Pods Manifest.lock */,
 				2397CD2E1E4866D400E3C696 /* Sources */,
 				2397CD2F1E4866D400E3C696 /* Frameworks */,
 				2397CD301E4866D400E3C696 /* Resources */,
+				B42D4D3C17C591CEEE3123C5 /* [CP] Embed Pods Frameworks */,
+				68B5AC3B3B3037BBED72E480 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -91,12 +137,13 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Sim Singh";
 				TargetAttributes = {
 					2397CD311E4866D400E3C696 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = LN34TEFAT5;
+						LastSwiftMigration = 0820;
 					};
 				};
 			};
@@ -131,13 +178,62 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		68B5AC3B3B3037BBED72E480 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-fLickz/Pods-fLickz-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6EE49458371D9397DD60BB42 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B42D4D3C17C591CEEE3123C5 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-fLickz/Pods-fLickz-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2397CD2E1E4866D400E3C696 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2397CD381E4866D400E3C696 /* ViewController.swift in Sources */,
 				2397CD361E4866D400E3C696 /* AppDelegate.swift in Sources */,
+				2397CD481E4867F600E3C696 /* MoviesViewController.swift in Sources */,
+				232E726B1E4886C9005AC053 /* MovieCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,8 +273,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -222,8 +320,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -242,29 +342,34 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		2397CD451E4866D400E3C696 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C9BA64AC02071C79D831CF5D /* Pods-fLickz.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = fLickz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sim.fLickz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		2397CD461E4866D400E3C696 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C6802EACDADEDB129BA5A449 /* Pods-fLickz.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = fLickz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sim.fLickz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -287,6 +392,7 @@
 				2397CD461E4866D400E3C696 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

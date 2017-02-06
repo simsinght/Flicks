@@ -1,0 +1,37 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A49EE5D195D463FF06E7679C1F532918E998CF5F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "F19EED1D62B79EB0C5269754984E899978CD83AB" : 0,
+    "A49EE5D195D463FF06E7679C1F532918E998CF5F" : 0,
+    "5143C01CFBC65F46C6A1863DC5DFB4E6B2C36672" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "1AC46AFC-1429-4083-B90D-03C62D7D6245",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "F19EED1D62B79EB0C5269754984E899978CD83AB" : "",
+    "A49EE5D195D463FF06E7679C1F532918E998CF5F" : "fLickz\/",
+    "5143C01CFBC65F46C6A1863DC5DFB4E6B2C36672" : "..\/.."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "fLickz",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "fLickz.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:simsinght\/Practice_and_Git.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5143C01CFBC65F46C6A1863DC5DFB4E6B2C36672"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:simsinght\/Flicks.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A49EE5D195D463FF06E7679C1F532918E998CF5F"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:simsinght\/Flicks.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F19EED1D62B79EB0C5269754984E899978CD83AB"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "A49EE5D195D463FF06E7679C1F532918E998CF5F",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "A49EE5D195D463FF06E7679C1F532918E998CF5F" : 0,
+    "5143C01CFBC65F46C6A1863DC5DFB4E6B2C36672" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "7536D229-4B2E-4BFA-A17D-C2EFA7610A94",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "A49EE5D195D463FF06E7679C1F532918E998CF5F" : "fLickz\/",
+    "5143C01CFBC65F46C6A1863DC5DFB4E6B2C36672" : ".."
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "fLickz",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "fLickz.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:simsinght\/Practice_and_Git.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "5143C01CFBC65F46C6A1863DC5DFB4E6B2C36672"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:simsinght\/Flicks.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "A49EE5D195D463FF06E7679C1F532918E998CF5F"
+    }
+  ]
+}
