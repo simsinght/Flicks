@@ -20,8 +20,27 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     
     var movies: [NSDictionary]?
     
+    var endpoint: String!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        if(endpoint == "now_playing"){
+            self.navigationItem.title = "Now Playing"
+        }
+        else{
+            self.navigationItem.title = "Top Rated"
+        }
+        
+        if let navigationBar = navigationController?.navigationBar {
+            
+            navigationBar.titleTextAttributes = [
+                NSFontAttributeName : UIFont.boldSystemFont(ofSize: 22),
+                NSForegroundColorAttributeName : UIColor(red: 0.15, green: 0.15, blue: 0.4, alpha: 0.8)
+            ]
+        }
+
+        
         
         // hide and resize error message initially
         errorView.isHidden = true
@@ -38,7 +57,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         tableView.delegate = self
  
         loadDataFromNetwork( reload: false )
-        print ("finish loading")
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -53,7 +72,8 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
         
         // url and fetch request
         let apiKey = "a07e22bc18f5cb106bfe4cc1f83ad8ed"
-        let url = URL(string: "https://api.themoviedb.org/3/movie/now_playing?api_key=\(apiKey)")!
+        
+        let url = URL(string: "https://api.themoviedb.org/3/movie/" + endpoint + "?api_key=\(apiKey)")!
         let request = URLRequest(url: url, cachePolicy: .reloadIgnoringLocalCacheData, timeoutInterval: 10)
         
         
@@ -81,7 +101,7 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
                     self.movies = (dataDictionary["results"] as! [NSDictionary])
                     // update the table
                     self.tableView.reloadData()
-                    print("reloading")
+                    
                     
                     if (reload) {
                         // Tell the refreshControl to stop spinning
@@ -108,7 +128,6 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     @IBAction func onErrorTap() {
         MBProgressHUD.showAdded(to: self.view, animated: true)
         loadDataFromNetwork(reload: true)
-        print("after")
         MBProgressHUD.hide(for: self.view, animated: true)
     }
     
@@ -145,8 +164,15 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        // create cell
         let cell = tableView.dequeueReusableCell(withIdentifier: "MovieCell", for: indexPath) as! MovieCell
         
+        // Use a image pattern when the user selects the cell
+        let backgroundView = UIView()
+        backgroundView.backgroundColor = UIColor(patternImage: UIImage(named: "eyes")!)
+        cell.selectedBackgroundView = backgroundView
+        
+        // set cell's info
         let movie = movies![indexPath.row]
         let title = movie["title"] as! String
         let overview = movie["overview"] as! String
@@ -169,14 +195,31 @@ class MoviesViewController: UIViewController, UITableViewDataSource, UITableView
     
     
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        
+        let cell = sender as! UITableViewCell
+        
+        let indexPath = tableView.indexPath(for: cell)
+        tableView.deselectRow(at: indexPath!, animated: true)
+        
+        let movie = movies![(indexPath?.row)!]
+        
+        
+        let detailViewController = segue.destination as! DetailedViewController
+        
+        detailViewController.movie = movie
+        
+
+        
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
-    */
+    
+    
 
 }

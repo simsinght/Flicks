@@ -11,9 +11,10 @@
 		232E726F1E48A4AE005AC053 /* alert.png in Resources */ = {isa = PBXBuildFile; fileRef = 232E726E1E48A4AE005AC053 /* alert.png */; };
 		2397CD361E4866D400E3C696 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2397CD351E4866D400E3C696 /* AppDelegate.swift */; };
 		2397CD3B1E4866D400E3C696 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2397CD391E4866D400E3C696 /* Main.storyboard */; };
-		2397CD3D1E4866D400E3C696 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2397CD3C1E4866D400E3C696 /* Assets.xcassets */; };
 		2397CD401E4866D400E3C696 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2397CD3E1E4866D400E3C696 /* LaunchScreen.storyboard */; };
 		2397CD481E4867F600E3C696 /* MoviesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2397CD471E4867F600E3C696 /* MoviesViewController.swift */; };
+		23BEBBC01E4AD9D10051CB1C /* DetailedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23BEBBBF1E4AD9D10051CB1C /* DetailedViewController.swift */; };
+		23ED54B51E52B60200C042A5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 23ED54B41E52B60200C042A5 /* Assets.xcassets */; };
 		CF8B9C4979E97CFABC4282C1 /* Pods_fLickz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 800F4E2EDC3F4D5CE9B60ADE /* Pods_fLickz.framework */; };
 /* End PBXBuildFile section */
 
@@ -23,10 +24,11 @@
 		2397CD321E4866D400E3C696 /* fLickz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = fLickz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2397CD351E4866D400E3C696 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2397CD3A1E4866D400E3C696 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		2397CD3C1E4866D400E3C696 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2397CD3F1E4866D400E3C696 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2397CD411E4866D400E3C696 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2397CD471E4867F600E3C696 /* MoviesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MoviesViewController.swift; sourceTree = "<group>"; };
+		23BEBBBF1E4AD9D10051CB1C /* DetailedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedViewController.swift; sourceTree = "<group>"; };
+		23ED54B41E52B60200C042A5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		800F4E2EDC3F4D5CE9B60ADE /* Pods_fLickz.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_fLickz.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C6802EACDADEDB129BA5A449 /* Pods-fLickz.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fLickz.release.xcconfig"; path = "Pods/Target Support Files/Pods-fLickz/Pods-fLickz.release.xcconfig"; sourceTree = "<group>"; };
 		C9BA64AC02071C79D831CF5D /* Pods-fLickz.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-fLickz.debug.xcconfig"; path = "Pods/Target Support Files/Pods-fLickz/Pods-fLickz.debug.xcconfig"; sourceTree = "<group>"; };
@@ -56,6 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				2397CD471E4867F600E3C696 /* MoviesViewController.swift */,
+				23BEBBBF1E4AD9D10051CB1C /* DetailedViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -94,9 +97,9 @@
 				232E72691E488687005AC053 /* Views */,
 				2397CD351E4866D400E3C696 /* AppDelegate.swift */,
 				2397CD391E4866D400E3C696 /* Main.storyboard */,
-				2397CD3C1E4866D400E3C696 /* Assets.xcassets */,
 				2397CD3E1E4866D400E3C696 /* LaunchScreen.storyboard */,
 				2397CD411E4866D400E3C696 /* Info.plist */,
+				23ED54B41E52B60200C042A5 /* Assets.xcassets */,
 			);
 			path = fLickz;
 			sourceTree = "<group>";
@@ -183,7 +186,7 @@
 			files = (
 				232E726F1E48A4AE005AC053 /* alert.png in Resources */,
 				2397CD401E4866D400E3C696 /* LaunchScreen.storyboard in Resources */,
-				2397CD3D1E4866D400E3C696 /* Assets.xcassets in Resources */,
+				23ED54B51E52B60200C042A5 /* Assets.xcassets in Resources */,
 				2397CD3B1E4866D400E3C696 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -245,6 +248,7 @@
 			files = (
 				2397CD361E4866D400E3C696 /* AppDelegate.swift in Sources */,
 				2397CD481E4867F600E3C696 /* MoviesViewController.swift in Sources */,
+				23BEBBC01E4AD9D10051CB1C /* DetailedViewController.swift in Sources */,
 				232E726B1E4886C9005AC053 /* MovieCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
